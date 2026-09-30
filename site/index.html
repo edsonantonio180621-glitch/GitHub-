@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Sitio oficial de La Embajada de Cristo">
+<title>La Embajada de Cristo</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="hero">
+  <nav class="nav wrap">
+    <a class="brand" href="#inicio">La Embajada de Cristo</a>
+    <button class="menu" id="menu" aria-label="Abrir menú">☰</button>
+    <div class="links" id="links">
+      <a href="#nosotros">Nosotros</a>
+      <a href="#mision">Misión</a>
+      <a href="#actividades">Actividades</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+  </nav>
+  <section id="inicio" class="hero-content wrap">
+    <p class="eyebrow">Comunidad cristiana</p>
+    <h1>Bienvenidos a<br><span>La Embajada de Cristo</span></h1>
+    <p class="lead">Un espacio de fe, servicio y esperanza; comprometido con el crecimiento espiritual, la unidad de la comunidad y el servicio al prójimo.</p>
+    <div class="hero-actions">
+      <a class="btn primary" href="#actividades">Ver actividades</a>
+      <a class="btn ghost" href="#contacto">Contactar</a>
+    </div>
+  </section>
+</header>
+
+<main>
+  <section id="nosotros" class="section wrap">
+    <div class="section-head">
+      <p class="eyebrow dark">Nuestra comunidad</p>
+      <h2>Una iglesia que sirve y construye comunidad</h2>
+    </div>
+    <div class="grid three">
+      <article class="card"><span>01</span><h3>Fe</h3><p>Fortalecimiento espiritual mediante la enseñanza, oración y acompañamiento comunitario.</p></article>
+      <article class="card"><span>02</span><h3>Servicio</h3><p>Acciones orientadas a las personas, familias y necesidades de la comunidad.</p></article>
+      <article class="card"><span>03</span><h3>Unidad</h3><p>Participación responsable y trabajo conjunto para alcanzar objetivos comunes.</p></article>
+    </div>
+  </section>
+
+  <section id="mision" class="section alt">
+    <div class="wrap split">
+      <div>
+        <p class="eyebrow dark">Propósito</p>
+        <h2>Compartir el evangelio y servir con responsabilidad</h2>
+      </div>
+      <div class="quote">
+        <p>Los fondos y esfuerzos de la comunidad se orientan al sostenimiento de la obra, el cuidado de quienes lo necesitan y la expansión del evangelio.</p>
+        <small>Inspirado en Hechos 4:34–35</small>
+      </div>
+    </div>
+  </section>
+
+  <section id="actividades" class="section wrap">
+    <div class="section-head">
+      <p class="eyebrow dark">Actividades</p>
+      <h2>Vida de la iglesia</h2>
+    </div>
+    <div class="grid three">
+      <article class="activity"><div class="icon">✦</div><h3>Cultos</h3><p>Encuentros de adoración, enseñanza y comunión.</p></article>
+      <article class="activity"><div class="icon">◇</div><h3>Formación</h3><p>Espacios de estudio bíblico y crecimiento espiritual.</p></article>
+      <article class="activity"><div class="icon">♡</div><h3>Ayuda social</h3><p>Apoyo comunitario y acciones de servicio.</p></article>
+    </div>
+  </section>
+
+  <section id="contacto" class="section contact">
+    <div class="wrap split">
+      <div>
+        <p class="eyebrow">Contacto</p>
+        <h2>La Embajada de Cristo</h2>
+        <p>Para consultas, actividades, reuniones o información de la comunidad.</p>
+      </div>
+      <div class="contact-box">
+        <p><strong>Correo:</strong> configurar correo institucional</p>
+        <p><strong>Teléfono:</strong> configurar número de contacto</p>
+        <p><strong>Dirección:</strong> configurar dirección de la iglesia</p>
+        <a class="btn primary" href="mailto:">Enviar mensaje</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footer">
+    <span>© <span id="year"></span> La Embajada de Cristo</span>
+    <span>Fe · Servicio · Comunidad</span>
+  </div>
+</footer>
+<script>
+document.getElementById('year').textContent=new Date().getFullYear();
+const m=document.getElementById('menu'),l=document.getElementById('links');
+m.onclick=()=>l.classList.toggle('open');
+l.querySelectorAll('a').forEach(a=>a.onclick=()=>l.classList.remove('open'));
+</script>
+</body>
+</html>
