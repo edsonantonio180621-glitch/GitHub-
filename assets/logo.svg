@@ -1,9 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
 <rect width="1024" height="1024" rx="190" fill="#0b1430"/>
-<g fill="none" stroke="#e7c36a" stroke-width="36" stroke-linecap="square" stroke-linejoin="miter">
+<g fill="none" stroke="#e7c36a" stroke-width="38" stroke-linecap="round" stroke-linejoin="round">
   <path d="M245 456c74 5 124 63 134 132-20 83-74 122-72 211 2 91 61 151 155 165 118 18 191-55 281-94 96-42 178-34 222 10v123c-67-62-147-85-226-68-95 21-171 93-288 90-154-4-265-103-270-259-3-83 40-148 55-207 16-59-3-91-41-103z"/>
   <path d="M365 619c61-115 144-218 267-291l167-96v247l-130 74"/>
   <path d="M412 659c93-122 188-227 316-300l130-73v256l-148 76"/>
 </g>
-<text x="512" y="935" text-anchor="middle" fill="#f0d58f" font-size="42" font-family="Arial, sans-serif" letter-spacing="8">EMBAJADA DE CRISTO</text>
 </svg>
