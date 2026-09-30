@@ -30,6 +30,8 @@ jobs:
         run: npm run build
       - name: Crear proyecto Android
         run: npx cap add android
+      - name: Generar icono y splash con el logotipo
+        run: npx @capacitor/assets generate --android --iconBackgroundColor '#0b1430' --iconBackgroundColorDark '#0b1430' --splashBackgroundColor '#0b1430' --splashBackgroundColorDark '#0b1430'
       - name: Sincronizar Capacitor
         run: npx cap sync android
       - name: Compilar APK debug
