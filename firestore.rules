@@ -1,0 +1,36 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function autenticado() { return request.auth != null; }
+    function rol() {
+      return get(/databases/$(database)/documents/usuarios/$(request.auth.uid)).data.rol;
+    }
+    function esAdmin() { return autenticado() && rol() == 'admin'; }
+    function esTecnico() { return autenticado() && rol() == 'tecnico'; }
+
+    match /usuarios/{uid} {
+      allow read: if autenticado() && request.auth.uid == uid;
+      allow write: if false;
+    }
+
+    match /mov/{id} {
+      allow read: if esAdmin() || (esTecnico() && resource.data.t == 'mayor');
+      allow create: if esAdmin() ||
+        (esTecnico() && request.resource.data.t == 'mayor' && request.resource.data.tipo == 'egreso');
+      allow update: if esAdmin() ||
+        (esTecnico() && resource.data.t == 'mayor' && request.resource.data.t == 'mayor' &&
+         resource.data.tipo == 'egreso' && request.resource.data.tipo == 'egreso');
+      allow delete: if esAdmin();
+    }
+
+    match /inv/{id} {
+      allow read, create, update: if esAdmin() || esTecnico();
+      allow delete: if esAdmin();
+    }
+
+    match /app/{id} {
+      allow read: if esAdmin() || esTecnico();
+      allow write: if esAdmin();
+    }
+  }
+}
